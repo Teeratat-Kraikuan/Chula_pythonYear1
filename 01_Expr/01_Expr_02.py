@@ -1,0 +1,6 @@
+a = float(input())
+b = float(input())
+c = float(input())
+bound_left = ((-b-(b**2-4*a*c)**(1/2))/(2*a))
+bound_right = ((-b+(b**2-4*a*c)**(1/2))/(2*a))
+print(round(bound_left, 3), round(bound_right, 3))
