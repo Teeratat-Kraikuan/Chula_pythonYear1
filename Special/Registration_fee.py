@@ -9,22 +9,11 @@ def calculate_price(id, sem):
     # b is Bachelor or Graduated
     # c is sem
     # d is the first 2 char in id
-    if id[8:] in ['21', '23', '25', '28']:
-        a = 0
-    else:
-        a = 1
-    if id[2] in ['3', '4']:
-        b = 0
-    else:
-        b = 1
-    if sem == 1 or sem == 2:
-        c = 0
-    else:
-        c = 1
-    if int(id[:2]) < 56:
-        d = 0
-    else:
-        d = 1
+    a = 0 if id[8:] in ['21', '23', '25', '28'] else 1
+    b = 0 if id[2] in ['3', '4'] else 1
+    c = 0 if sem in [1,2] else 1
+    d = 0 if int(id[:2]) < 56 else 1
+
     return prices[a][b][c][d][0]
 
 def main():
